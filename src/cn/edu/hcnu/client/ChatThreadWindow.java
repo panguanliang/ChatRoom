@@ -51,7 +51,6 @@ public class ChatThreadWindow {
         f.setVisible(true);
         GetMessageThread getMessageThread = new GetMessageThread(this);
         getMessageThread.start();
-
         /*
         提示XXX进入聊天室
          */
@@ -59,9 +58,9 @@ public class ChatThreadWindow {
     }
 
     public void showXXXIntoChatRoom() {
-        String url = "jdbc:oracle:thin:@localhost:1521:orclhc";
-        String username_db = "opts";
-        String password_db = "opts1234";
+        String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+        String username_db = "pgl";
+        String password_db = "123";
         PreparedStatement pstmt = null;
         Connection conn = null;
         try {
@@ -82,7 +81,7 @@ public class ChatThreadWindow {
                     ipB[i] = (byte)Integer.parseInt(ips[i]);
                 }
                 if(!username.equals(name)){
-                    String message = name+"进入了聊天室";
+                    String message = name+"进入了聊天室"+"\n";
                     byte[] m = message.getBytes();
                     DatagramPacket dp = new DatagramPacket(m, m.length);
                     dp.setAddress(InetAddress.getByAddress(ipB));

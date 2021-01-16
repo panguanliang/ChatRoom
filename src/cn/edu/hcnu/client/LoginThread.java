@@ -36,7 +36,7 @@ public class LoginThread extends Thread {
         loginf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         loginf.setTitle("聊天室" + " - 登录");
 
-        t = new JTextField("Version " + "1.1.0" + "        By liwei");
+        t = new JTextField();
         t.setHorizontalAlignment(JTextField.CENTER);
         t.setEditable(false);
         loginf.getContentPane().add(t, BorderLayout.SOUTH);
@@ -49,7 +49,7 @@ public class LoginThread extends Thread {
         t1.setEditable(false);
         loginp.add(t1);
 
-        final JTextField loginname = new JTextField("liwei");
+        final JTextField loginname = new JTextField("PGL");
         loginname.setHorizontalAlignment(JTextField.CENTER);
         loginp.add(loginname);
 
@@ -58,7 +58,7 @@ public class LoginThread extends Thread {
         t2.setEditable(false);
         loginp.add(t2);
 
-        final JTextField loginPassword = new JTextField("lw1234");
+        final JTextField loginPassword = new JTextField("PGL1234");
         loginPassword.setHorizontalAlignment(JTextField.CENTER);
         loginp.add(loginPassword);
         /*
@@ -89,9 +89,9 @@ public class LoginThread extends Thread {
                 PreparedStatement pstmt = null;
                 String sql = "";
                 try {
-                    String url = "jdbc:oracle:thin:@localhost:1521:orclhc";
-                    String username_db = "opts";
-                    String password_db = "opts1234";
+                    String url = "jdbc:oracle:thin:@localhost:1521:orcl";
+                    String username_db = "pgl";
+                    String password_db = "123";
                     Connection conn = DriverManager.getConnection(url, username_db, password_db);
                     sql = "SELECT password FROM users WHERE username=?";
                     pstmt = conn.prepareStatement(sql);

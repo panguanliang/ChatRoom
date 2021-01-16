@@ -34,8 +34,8 @@ public class GetMessageThread extends Thread {
                     System.out.println("处理后的消息："+message);
                 }
                 /*
-                wjl进入聊天室
-                1、分割消息拿到用户名，例如wjl
+                pgl进入聊天室
+                1、分割消息拿到用户名，例如pgl
                 2、然后在使用JComboBox把用户名加入下拉框
                  */
                 cb.addItem(message);
